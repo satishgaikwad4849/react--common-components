@@ -1,0 +1,132 @@
+
+.header{
+  top: 0 ;
+  left: 0 ;
+  position: sticky ;
+  z-index: 4 ;
+}
+
+footer {
+  margin-top: auto;
+  color: #888;
+  height:10vh;
+  background-color: #f4f4f4;
+  border-top: 2px solid #eee;
+  text-align: center;
+  a {
+    text-decoration: none;
+    color: #888;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+/* loader css */
+.loader-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.loader {
+  border: 8px solid #3498db;
+  border-radius: 50%;
+  border-top: 8px solid transparent;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+  margin-bottom: 16px;
+}
+
+.loader-text {
+  font-size: 16px;
+  color: #555;
+}
+
+/* Spinner.css */
+.spinner {
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  border: 4px solid #3498db;
+  border-top: 4px solid transparent;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/* searchable dropdown */
+/* SearchableDropdown.css */
+/* SearchableDropdown.css */
+.searchable-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-toggle {
+  padding: 10px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+
+.dropdown-toggle.open {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.dropdown-options {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-top: none;
+  background-color: #fff;
+  z-index: 1;
+}
+
+input {
+  width: 100%;
+  padding: 8px;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  outline: none;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  padding: 8px;
+  cursor: pointer;
+}
+
+li:hover {
+  background-color: #f0f0f0;
+}
+
+/* Optional: Custom styling for the dropdown container in App.js */
+.custom-dropdown {
+  width: 200px;
+}
+
+/* Optional: Additional styling for the App.js container */
+.App {
+  text-align: center;
+  margin-top: 50px;
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
