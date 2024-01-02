@@ -1,37 +1,62 @@
 // CustomButton.js
 import React from "react";
-import CustomButton from "../../common/Button/button"; 
+import CustomButton from "../../common/Button/button";
+import Container from "../../common/container";
+import ReusableCodeEditor from "../../common/codeEditor";
 
 const CustomButtonComponent = () => {
   const handleButtonClick = () => {
     alert("Button Clicked!");
   };
-  return(
+  const initialValue = `function greet() {
+    return "Hello, World!";
+  }`;
+
+  const customOptions = {
+    theme: "github", // You can customize other options here
+  };
+
+  return (
     <>
-  <CustomButton
-        variant="primary"
-        href="https://example.com"
-        target="_blank"
-        size="lg"
-        block
-      >
-        Visit Example.com
-      </CustomButton>
-      {/* Example without href */}
-      <CustomButton
-        variant="success"
-        onClick={handleButtonClick}
-        disabled={false}
-        type="button"
-        size="sm"
-        block
-        className="custom-style"
-        id="uniqueButtonId"
-        style={{ marginTop: "10px" }}
-      >
-        Click Me
-      </CustomButton>
-      </>
+    <div>
+      <Container>
+        <div>
+        <ul style={{listStyle:'none', padding:0}}>
+          <li style={{borderBottom:'0'}}>
+
+            <h6>Button Without href</h6>
+            <CustomButton
+              variant="success"
+              onClick={handleButtonClick}
+              disabled={false}
+              type="button"
+              size="sm"
+              block
+              className="custom-style"
+              id="uniqueButtonId"
+            >
+              Button
+            </CustomButton>
+            <h6 style={{ marginTop: '15px' }}>Button With href</h6>
+            <CustomButton
+              variant="primary"
+              href="https://example.com"
+              target="_blank"
+              size="sm"
+              block
+            >
+              Visit Example.com
+            </CustomButton>
+          </li>
+        </ul>
+        </div>
+        {/* Example without href */}
+
+        <ReusableCodeEditor initialValue={CustomButton.toString()} options={customOptions} style={{ width: "100%", height: "500px", margin: "10px auto", zIndex:0}} />
+      </Container>
+      </div>
+    </>
+
   )
 };
 
